@@ -1,2 +1,2 @@
-# CS1
-files for working on enDEVour
+# enDEVour
+My files from Shopify enDEVour courses
