@@ -4,8 +4,8 @@ void setup()
   background(217, 234, 210);
 }
 
-// define aunit for spacing
-float space = height/28
+// define a unit for spacing
+float space = height/28;
 
 void draw()
 {
@@ -21,23 +21,23 @@ void draw()
 void goldilock()
 {
   //position of goldilocks
-  float goldiX = width/2
-  float goldiY = height/4
+  float goldiX = width/2;
+  float goldiY = height/4;
   //head
-  circle()
+  //circle()
   //body
-  triangle()
+  //triangle()
 }
 
 
 void bear(float bearX, float bearY)
 {
   //body
-  ellipse()
+  //ellipse()
   //head
-  ellipse()
+  //ellipse()
   //ears
-  circle()
-  circle()
+  //circle()
+  //circle()
   
 }
