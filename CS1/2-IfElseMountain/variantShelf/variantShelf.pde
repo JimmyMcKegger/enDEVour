@@ -1,76 +1,68 @@
 //Product Variants on a Shelf
 
-/*
-
-The program begins by showing an empty shelf.
-
-You have written a self-contained function that abstracts drawing the product variant. The function will need parameters for the x and y position along with at least one other parameter that changes between variants (for example, size or colour). Name your function well to indicate what it accomplishes.
-
-The user can press a number key ('1' through the number of variants) to select the next variant that will appear on the shelf.
- 
-When the space key is pressed, a new instance of the currently selected variant appears somewhere randomly along the shelf (don't worry if it overlaps with previous variants).
-*/
-
-//set the important global variables
-
-final int backgroundColor = color(255);
-final int variantWidth = 50;
-final int variantHeight = 50;
-
-color variantColor;
+//Pick a box size with the numbers 1-5, then create a new variant of a random color and your selected size at a random spot on the shelf with the space bar
 
 void setup()
 {
-  size(800, 500);
+  size(800, 600);
   background(backgroundColor);
   rectMode(CENTER);
-  
-  //TODO draw a shelf
+  strokeWeight(4);
+  rect(width/2, height/3, width*0.8, height/4);
 }
+
+final int backgroundColor = color(255);
+
+//default size is medium
+int variantSize = 50;
+
+int variantX = int(random(width*0.2 + variantSize/2, width*0.8 - variantSize/2));
+int variantY = int(height/4 - variantSize/2);
 
 void draw()
 {
-  
+  strokeWeight(1);
 }
 
-// press a number key to add a variant
+// press a number key to select a variant's size
 void keyPressed()
 {
   switch(key)
   {
     case '1':
-      newVariant(100, 100, randomColor());
+      //small box
+      variantSize = 20;
       break;
     case '2':
-      //TODO
+      //medium box
+      variantSize = 40;
       break;
     case '3':
-      //TODO
+      //large box
+      variantSize = 75;
       break;
     case '4':
-      //TODO
+      //extra large box
+      variantSize = 100;
       break;
     case '5':
-      //TODO
+    //huge box
+      variantSize = 150;
       break;
-    case '6':
-      //TODO
-      break;
-    case '7':
-      //TODO
-      break;
-    case '8':
-      //TODO
+    case ' ':
+      //Create a new variant variant
+      variantX = int(random(width*0.2, width*0.8));
+      variantY = int(height/3 + (height/4)/2 - variantSize/2);
+      newVariant(variantSize, variantSize, randomColor());
       break;
   }
-  
 }
 
 //initialise a new vatiant with it's location and a new colour
-void newVariant(int varX, int varY, color varC)
+void newVariant(int varX, int varY, color varC)  
 {
   fill(varC);
-  rect(varX, varY, variantWidth, variantHeight);
+  rect(variantX, variantY, variantSize, variantSize);
 }
 
 //function to generate random colours
