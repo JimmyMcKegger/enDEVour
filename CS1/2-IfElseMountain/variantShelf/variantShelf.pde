@@ -1,9 +1,9 @@
- //Product Variants on a Shelf
+//Product Variants on a Shelf
 
-/*
+/* 
 Pick a box size with the numbers 1-5, 
-then create a new variant of a random color 
-and your selected size at a random spot on the shelf with the space bar
+then use the SPACE key to create a new variant of a random color 
+and your selected size at a random spot on the shelf.
 */
 
 void setup()
@@ -23,16 +23,9 @@ int variantSize = 50;
 int variantX = int(random(width*0.2 + variantSize/2, width*0.8 - variantSize/2));
 int variantY = int(height/4 - variantSize/2);
 
-int variantCounter = 0;
-
 void draw()
 {
   strokeWeight(1);
-  
-  if (variantCounter == 10 || variantCounter == 20)
-  {
-    println("this is my breakpoint"); //<>//
-  }
 }
 
 // press a number key to select a variant's size
@@ -45,7 +38,7 @@ void keyPressed()
       variantSize = 20;
       break;
     case '2':
-      //mediu  m box
+      //medium box
       variantSize = 40;
       break;
     case '3':
@@ -59,7 +52,7 @@ void keyPressed()
     case '5':
     //huge box
       variantSize = 150;
-      break;  
+      break;
     case ' ':
       //Create a new variant variant
       variantX = int(random(width*0.2, width*0.8));
@@ -67,14 +60,13 @@ void keyPressed()
       newVariant(variantSize, variantSize, randomColor());
       break;
   }
- }
+}
 
 //initialise a new vatiant with it's location and a new colour
 void newVariant(int varX, int varY, color varC)  
 {
   fill(varC);
   rect(variantX, variantY, variantSize, variantSize);
-  variantCounter += 1;
 }
 
 //function to generate random colours
