@@ -44,7 +44,7 @@ void draw()
   }
 }
 
-void play() //<>// //<>// //<>//
+void play()  //<>//
 {
     background(0);
     stroke(128);
@@ -70,6 +70,7 @@ void play() //<>// //<>// //<>//
       {
         speed *= -1;
         elevation *= -1;
+        ballX -= 10;
       } else if (ballX - ballSize/2 <= pad1X + padWidth/2 &&
                  ballX - ballSize/2 >= pad1X - padWidth/2 &&
                  ballY <= pad1Y + padHeight/2 &&
@@ -77,6 +78,7 @@ void play() //<>// //<>// //<>//
       {
         speed *= -1; //<>//
         elevation *= -1;
+        ballX += 5;
       }
       
     // edge bounce checkers
